@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TODO</title>
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="/javascripts/script.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<h2>TODO:</h2>
+		<ul id="tasks">
+			<% tasks.forEach(function(task){ %>
+		   		<li><%= task %></li>
+			<% }) %>
+		</ul>
+		<form>
+			<input type="text" name="task">
+			<input type="submit" value="Add">
+		</form>
+	</div>
+</body>
+</html>
