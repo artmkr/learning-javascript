@@ -8,14 +8,11 @@
 </head>
 <body>
 	<div class="wrapper">
-		<h2>TODO:</h2>
+		<h2 class="title">TODO:</h2>
 		<ul id="tasks">
-			<% tasks.forEach(function(task){ %>
-		   		<li><%= task %></li>
-			<% }) %>
 		</ul>
 		<form>
-			<input type="text" name="task">
+			<input placeholder="new task" type="text" name="task">
 			<input type="submit" value="Add">
 		</form>
 	</div>

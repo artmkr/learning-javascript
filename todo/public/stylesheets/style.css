@@ -1,6 +1,11 @@
 body {
-  padding: 50px;
+  background: #eee;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.title {
+	padding-bottom: 15px;
+	border-bottom: 2px #ccc dashed;
 }
 
 ul{
@@ -11,8 +16,12 @@ ul{
 .wrapper {
 	max-width: 40%;
 	margin: auto;
+	margin-top: 5%;
+	background: #fff;
+	padding: 50px;
 }
 
 a {
-  color: #00B7FF;
+  color: #5c5;
+  text-decoration: none;
 }

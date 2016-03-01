@@ -1,18 +1,36 @@
 $(function() {
+    function appendToList(tasks) {
+        $.each(tasks, function(index, task) {
+            var content = '<a href="#" data-task="' + task + '">✓</a>' + task;
+            $('#tasks').append('<li>' + content + '</li>');
+        });
+    }
 
+    $.get('/tasks', appendToList);
+
+    $('#tasks').on('click', 'a[data-task]', function(event) {
+        if (!confirm('Are you sure?')) {
+            return false;
+        }
+
+        var target = $(event.currentTarget);
+        $.ajax({
+            type: 'DELETE',
+            url: '/tasks/' + target.data('task')
+        }).done(function() {
+            target.parents('li').remove();
+        });
+    });
 
     $("form").on('submit', function() {
         event.preventDefault();
         form = $(this);
-        var task = ((form.serializeArray())[0])['value'];
-
         $.ajax({
             type: 'POST',
-            url: '/',
+            url: '/tasks',
             data: form.serialize()
         }).done(function(task) {
-            $("#tasks").append('<li>' + task + '</li>');
-            form.trigger('reset');
+            appendToList([task]);
         });
     });
 });
