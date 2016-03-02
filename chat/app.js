@@ -16,8 +16,14 @@ app.get('/', function(req, res) {
 });
 
 io.on('connection', function(socket) {
+    socket.on('init', function(name) {
+        socket.name = name;
+    });
     socket.on('message', function(msg) {
-        io.emit('message', msg);
+        io.emit('message', {
+            name: socket.name,
+            message: msg
+        });
     });
 });
 
