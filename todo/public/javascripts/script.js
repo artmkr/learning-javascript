@@ -31,6 +31,7 @@ $(function() {
             data: form.serialize()
         }).done(function(task) {
             appendToList([task]);
+            form.trigger('reset');
         });
     });
 });

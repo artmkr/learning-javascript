@@ -1,9 +1,9 @@
 {
-  "name": "todo",
+  "name": "chat",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-      "body-parser": "^1.15.0",
+      "body-parser": "~1.13.2",
       "debug": "~2.2.0",
       "ejs": "^2.4.1",
       "express": "~4.13.1",
