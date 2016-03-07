@@ -1,0 +1,19 @@
+{
+  "name": "shop",
+  "version": "1.0.0",
+  "description": "simple shop app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "shop",
+    "mongodb"
+  ],
+  "author": "nuenvio",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "jade": "^1.11.0"
+  }
+}
