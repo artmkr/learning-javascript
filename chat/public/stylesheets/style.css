@@ -47,11 +47,11 @@ form input {
 
 form button {
 	margin:5px 10px 5px 0;
-  color: white;
+  color: black;
   text-decoration: none;
   text-transform: uppercase;
   padding: 10px;
-  background: #97425c;
+  background: #efefef;
   border: 1px solid rgba(255,255,255,0.2);
 	float: right;
 }
