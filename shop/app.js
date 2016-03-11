@@ -45,7 +45,6 @@ app.post('/shop', parseUrlencoded, function(req, res) {
             name: req.body.name,
             price: req.body.price
         });
-        console.log(req.body);
         newItem.save(function(err) {
             if (err) throw err;
             res.status(201).send();
