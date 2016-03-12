@@ -10,13 +10,25 @@ parseUrlencoded = bodyParser.urlencoded({
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/shop');
 
-var Item = mongoose.model('Item', {
+
+var Schema = new mongoose.Schema({
     name: String,
     description: String,
     price: Number,
     count: Number,
     image: String
 });
+
+Schema.methods.buy = function() {
+    if (this.count === 0) return 0;
+    else {
+        this.count -= 1;
+        this.save();
+        return 1;
+    }
+};
+
+var Item = mongoose.model('Item', Schema);
 
 app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, 'views'));
@@ -55,6 +67,17 @@ app.post('/shop', parseUrlencoded, function(req, res) {
     } else {
         res.status(204).send();
     }
+});
+
+app.put('/shop/:name', function(req, res) {
+    var bought_item = req.params.name;
+    Item.find({
+        name: bought_item
+    }, function(err, items) {
+        item = items[0];
+        if (item.buy() === 0) res.status(404).send('items sold')
+        else res.status(202).send('OK');
+    })
 });
 
 app.delete('/shop/:name', function(req, res) {
