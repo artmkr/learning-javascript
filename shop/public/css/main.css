@@ -1,0 +1,66 @@
+body {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+		background-color: #e9e9e9;
+
+}
+
+h1 {
+	margin: 20px;
+	padding: 20px;
+	text-align: center;
+	color:#00CCCC;
+	font-weight: 400;
+	font-size: 3em;
+	border-bottom: #00CCCC solid 2px;
+}
+
+button {
+	margin:57px 0 0 10px;
+  color: black;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  background: #0cc;
+  border: 1px solid rgba(0,0,0,0.1);
+  float: right;
+}
+
+.wrapper {
+	background:#f2f2f2;
+	width: 700px;
+	margin: auto;
+	min-height: 500px;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+.item {
+	max-width: 500px;
+	color: #555;
+	overflow: auto;
+	margin: 20px;
+	margin: auto;
+	padding: 10px;
+	border-bottom: #999 2px dashed;
+}
+
+.item > .description {
+	float: right;
+}
+
+.item > .price {
+	margin:65px 0 0 10px;
+	float: left;
+}
+
+.item > .count {
+	margin:0 0 0 110px;
+}
+
+.item > img {
+	max-width: 100px;
+	height: auto;
+	float: left;
+}

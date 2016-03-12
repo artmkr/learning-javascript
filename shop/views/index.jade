@@ -1,8 +1,23 @@
 doctype html
 html(lang="en")
-  head
-    title= pageTitle
-    script(type='text/javascript', src='//code.jquery.com/jquery-1.12.0.min.js')
-    script(type='text/javascript', src='/js/script.js')
-  body
-    h1 Shop
+	head
+		title= pageTitle
+		script(type='text/javascript', src='//code.jquery.com/jquery-1.12.0.min.js')
+		script(type='text/javascript', src='/js/script.js')
+		link(rel='stylesheet', type='css/text', href='/css/main.css')
+	body
+		.wrapper
+			h1 Shop
+			ul
+				li.item 
+					img(src='img/item1.png')
+					div.description Cool item
+					div.count 3 items left
+					div.price 300$
+					button buy
+				li.item 
+					img(src='img/item2.png')
+					span.description Cool item
+				li.item 
+					img(src='img/item3.png')
+					span.description Cool item

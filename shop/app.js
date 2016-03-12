@@ -12,7 +12,9 @@ mongoose.connect('mongodb://localhost/shop');
 
 var Item = mongoose.model('Item', {
     name: String,
-    price: Number
+    description: String,
+    price: Number,
+    count: Number
 });
 
 app.set('view engine', 'jade');
@@ -56,7 +58,6 @@ app.post('/shop', parseUrlencoded, function(req, res) {
 
 app.delete('/shop/:name', function(req, res) {
     var delete_item = req.params.name;
-    // get the user starlord55
     Item.findOneAndRemove({
         name: delete_item
     }, function(err) {
