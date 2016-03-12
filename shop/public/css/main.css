@@ -20,7 +20,7 @@ button {
   text-transform: uppercase;
   padding: 5px 10px;
   background: #0cc;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.05);
   float: right;
 }
 

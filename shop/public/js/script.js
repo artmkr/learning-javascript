@@ -1,12 +1,14 @@
+function appendToList(items) {
+    $.each(items, function(index, item) {
+        var content = '<img src="' + item.image + '"> \
+        <div class="description">' + item.name + '</div> \
+        <div class="count">' + item.count + ' items left' + '</div> \
+        <div class="price">' + '$' + item.price + '</div> \
+        <button>buy</button> '
+        $('#items').append('<li class="item">' + content + '</li>');
+    });
+}
+
 $(document).ready(function() {
-    $.ajax({
-        url: '/shop',
-        type: 'GET',
-    })
-        .done(function(data) {
-            console.log(data);
-        })
-        .fail(function() {
-            alert('something went wrong')
-        })
+    $.get('/shop', appendToList);
 });

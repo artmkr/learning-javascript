@@ -14,7 +14,8 @@ var Item = mongoose.model('Item', {
     name: String,
     description: String,
     price: Number,
-    count: Number
+    count: Number,
+    image: String
 });
 
 app.set('view engine', 'jade');
@@ -31,10 +32,7 @@ app.get('/shop', function(req, res) {
     Item.find({}, function(err, items) {
         var itemMap = [];
         items.forEach(function(item) {
-            itemMap.push({
-                name: item.name,
-                price: item.price
-            });
+            itemMap.push(item);
         });
         res.send(itemMap);
     });
@@ -45,7 +43,10 @@ app.post('/shop', parseUrlencoded, function(req, res) {
     if (req.body.name && req.body.price) {
         var newItem = Item({
             name: req.body.name,
-            price: req.body.price
+            price: req.body.price,
+            image: req.body.image,
+            count: req.body.count,
+            description: req.body.description
         });
         newItem.save(function(err) {
             if (err) throw err;
