@@ -9,4 +9,12 @@
 
 Based on [socket.io](http://socket.io/ "websockets").
 
-![TODO](https://raw.githubusercontent.com/nuenvio/node-training/master/sreenshots/chat.png)
+![Chat](https://raw.githubusercontent.com/nuenvio/node-training/master/sreenshots/chat.png)
+
+
+### Shop
+
+![Shop](https://raw.githubusercontent.com/nuenvio/node-training/master/sreenshots/shop.png)
+
+
+![Shop](https://raw.githubusercontent.com/nuenvio/node-training/master/sreenshots/shop-description.png)
