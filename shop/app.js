@@ -40,6 +40,20 @@ app.get('/', function(req, res) {
     res.render('index');
 });
 
+app.get('/description/:name', function(req, res) {
+    var bought_item = req.params.name;
+    Item.find({
+        name: bought_item
+    }, function(err, items) {
+        if (items == 0) {
+            res.status('404').send('item not found');
+        }
+        res.render('description', {
+            item: items[0]
+        });
+    })
+});
+
 app.get('/shop', function(req, res) {
     Item.find({}, function(err, items) {
         var itemMap = [];

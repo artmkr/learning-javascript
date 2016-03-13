@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+	head
+		title= pageTitle
+		script(type='text/javascript', src='//code.jquery.com/jquery-1.12.0.min.js')
+		link(rel='stylesheet', type='css/text', href='/css/main.css')
+		script(type='text/javascript', src='/js/script.js')
+
+	body
+		.wrapper
+			h1 Shop
+			div.description
+				h2 #{item.name}
+				img(src='../' + item.image)
+				div.item-description #{item.description}
+				div.count #{item.count} items left
+				div.price #{item.price}$
+				button(id=item.name) buy
+
