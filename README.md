@@ -1,4 +1,4 @@
-# Node.js training
+# JavaScript training
 
 ### TODO app
 
